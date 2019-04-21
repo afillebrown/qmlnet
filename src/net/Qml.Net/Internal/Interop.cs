@@ -113,6 +113,8 @@ namespace Qml.Net.Internal
             Utilities = LoadInteropType<UtilitiesInterop>(library, loader);
             QtWebEngine = LoadInteropType<QtWebEngineInterop>(library, loader);
             QTest = LoadInteropType<QTestInterop>(library, loader);
+            NetQObject = LoadInteropType<NetQObjectInterop>(library, loader);
+            NetQObjectSignalConnection = LoadInteropType<NetQObjectSignalConnectionInterop>(library, loader);
 
             if (!string.IsNullOrEmpty(pluginsDirectory))
             {
@@ -166,6 +168,10 @@ namespace Qml.Net.Internal
         public static QtWebEngineInterop QtWebEngine { get; }
 
         public static QTestInterop QTest { get; }
+        
+        public static NetQObjectInterop NetQObject { get; }
+        
+        public static NetQObjectSignalConnectionInterop NetQObjectSignalConnection { get; set; }
 
         private static T LoadInteropType<T>(IntPtr library, NetNativeLibLoader.Loader.IPlatformLoader loader)
             where T : new()

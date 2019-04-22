@@ -55,11 +55,11 @@ namespace Qml.Net.Internal
 
             var library = loader.LoadLibrary(result.Path);
 
-            if (library == IntPtr.Zero)
-            {
-                throw new Exception("Unable to load native Qml.Net library." +
-                                    " Try calling \"RuntimeManager.DiscoverOrDownloadSuitableQtRuntime();\" in Program.Main()");;
-            }
+            //if (library == IntPtr.Zero)
+            //{
+            //    throw new Exception("Unable to load native Qml.Net library." +
+            //                        " Try calling \"RuntimeManager.DiscoverOrDownloadSuitableQtRuntime();\" in Program.Main()");;
+            //}
             
             Callbacks = LoadInteropType<CallbacksInterop>(library, loader);
             NetTypeInfo = LoadInteropType<NetTypeInfoInterop>(library, loader);
